@@ -1,0 +1,5 @@
+C:/Users/tkenn/Desktop/DesktopMarker/build/CMakeFiles/DesktopMarker.dir
+C:/Users/tkenn/Desktop/DesktopMarker/build/CMakeFiles/edit_cache.dir
+C:/Users/tkenn/Desktop/DesktopMarker/build/CMakeFiles/rebuild_cache.dir
+C:/Users/tkenn/Desktop/DesktopMarker/build/CMakeFiles/DesktopMarker_autogen_timestamp_deps.dir
+C:/Users/tkenn/Desktop/DesktopMarker/build/CMakeFiles/DesktopMarker_autogen.dir
