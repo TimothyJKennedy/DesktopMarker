@@ -1225,10 +1225,10 @@ C:/Users/tkenn/Desktop/DesktopMarker/src/settingsdialog.h
  mdp:C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h
  mdp:C:/Users/tkenn/Desktop/DesktopMarker/build/DesktopMarker_autogen/moc_predefs.h
  mdp:C:/Users/tkenn/Desktop/DesktopMarker/src/settingsdialog.h
+C:/Users/tkenn/Desktop/DesktopMarker/src/settingsmanager.h
 C:/Users/tkenn/Desktop/DesktopMarker/src/settingsdialog.cpp
 C:/Users/tkenn/Desktop/DesktopMarker/src/stroke.h
 C:/Users/tkenn/Desktop/DesktopMarker/src/hovertab.cpp
-C:/Users/tkenn/Desktop/DesktopMarker/src/settingsmanager.h
 C:/Users/tkenn/Desktop/DesktopMarker/src/strokemanager.h
  mmc:Q_OBJECT
  mdp:C:/Qt/6.8.2/mingw_64/include/QtCore/QObject

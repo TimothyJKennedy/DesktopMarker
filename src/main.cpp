@@ -1,7 +1,11 @@
 #include <QApplication>
 #include <QAbstractNativeEventFilter>
 #include <QGuiApplication>
+#include <QLabel>
+#include <QPainter>
 #include <QScreen>
+#include <QTimer>
+#include <QVBoxLayout>
 
 #include <functional>
 
@@ -62,6 +66,59 @@ int main(int argc, char* argv[])
     app.setApplicationName(QStringLiteral("DesktopMarker"));
     app.setOrganizationName(QStringLiteral("DesktopMarker"));
     app.setQuitOnLastWindowClosed(false);
+
+    // ── Splash screen ────────────────────────────────────────────────────
+    auto* splash = new QWidget(nullptr, Qt::FramelessWindowHint
+                                        | Qt::WindowStaysOnTopHint);
+    splash->setAttribute(Qt::WA_TranslucentBackground);
+    splash->setAttribute(Qt::WA_DeleteOnClose);
+    splash->setFixedSize(320, 340);
+
+    auto* slay = new QVBoxLayout(splash);
+    slay->setAlignment(Qt::AlignCenter);
+    slay->setSpacing(10);
+    slay->setContentsMargins(30, 28, 30, 24);
+
+    auto* bg = new QFrame(splash);
+    bg->setStyleSheet(QStringLiteral(
+        "QFrame{background:qlineargradient(y1:0,y2:1,stop:0 #1a1a32,stop:1 #0e0e1e);"
+        "border:1px solid #2a2a4a; border-radius:16px;}"));
+    bg->setFixedSize(320, 340);
+    bg->move(0, 0);
+    bg->lower();
+
+    QPixmap icon(QStringLiteral(":/icon.png"));
+    auto* iconLabel = new QLabel(splash);
+    iconLabel->setPixmap(icon.scaled(128, 128, Qt::KeepAspectRatio, Qt::SmoothTransformation));
+    iconLabel->setAlignment(Qt::AlignCenter);
+    slay->addWidget(iconLabel);
+
+    auto* title = new QLabel(QStringLiteral("DesktopMarker"), splash);
+    title->setAlignment(Qt::AlignCenter);
+    title->setStyleSheet(QStringLiteral(
+        "color:#e0e0f0; font-size:22px; font-weight:bold; background:transparent;"));
+    slay->addWidget(title);
+
+    auto* ver = new QLabel(QStringLiteral("v1.0.2"), splash);
+    ver->setAlignment(Qt::AlignCenter);
+    ver->setStyleSheet(QStringLiteral(
+        "color:#6a6a8a; font-size:13px; background:transparent;"));
+    slay->addWidget(ver);
+
+    slay->addSpacing(6);
+
+    auto* credit = new QLabel(QStringLiteral("Created by Timothy J Kennedy  \u00b7  2026"), splash);
+    credit->setAlignment(Qt::AlignCenter);
+    credit->setStyleSheet(QStringLiteral(
+        "color:#8080a0; font-size:11px; background:transparent;"));
+    slay->addWidget(credit);
+
+    splash->move(QGuiApplication::primaryScreen()->geometry().center()
+                 - QPoint(160, 170));
+    splash->show();
+    app.processEvents();
+
+    QTimer::singleShot(2500, splash, &QWidget::close);
 
     // ── Core objects ─────────────────────────────────────────────────────
     StrokeManager  strokeMgr;

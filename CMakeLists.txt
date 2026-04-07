@@ -1,9 +1,10 @@
 cmake_minimum_required(VERSION 3.25)
-project(DesktopMarker VERSION 1.0.0 LANGUAGES CXX)
+project(DesktopMarker VERSION 1.0.2 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
 
 find_package(Qt6 6.7 REQUIRED COMPONENTS Widgets)
 
@@ -25,7 +26,13 @@ set(HEADERS
     src/settingsdialog.h
 )
 
-qt_add_executable(DesktopMarker ${SOURCES} ${HEADERS})
+set(RESOURCES src/resources.qrc)
+
+if(WIN32)
+    list(APPEND SOURCES src/app.rc)
+endif()
+
+qt_add_executable(DesktopMarker ${SOURCES} ${HEADERS} ${RESOURCES})
 
 target_link_libraries(DesktopMarker PRIVATE Qt6::Widgets)
 

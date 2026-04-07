@@ -251,7 +251,8 @@
 		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets.cmake",
 		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets-relwithdebinfo.cmake",
 		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginAdditionalTargetInfo.cmake",
-		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake"
+		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake",
+		"C:/Users/tkenn/Desktop/DesktopMarker/src/resources.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "C:/Users/tkenn/Desktop/DesktopMarker",
 	"CROSS_CONFIG" : false,
